@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('hello', 'HelloController@index');
+Route::get('hello', 'HelloController@index')->middleware('auth');
 Route::post('hello', 'HelloController@post');
 
 Route::get('person', 'PersonController@index');
@@ -40,4 +40,13 @@ Route::get('hello/rest', 'HelloController@rest');
 Route::get('hello/session', 'HelloController@ses_get');
 Route::post('hello/session', 'HelloController@ses_put');
 
+Route::get('hello/auth', 'HelloController@getAuth');
+Route::post('hello/auth', 'HelloController@postAuth');
 
+
+
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
