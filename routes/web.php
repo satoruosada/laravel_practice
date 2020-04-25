@@ -44,9 +44,6 @@ Route::get('hello/auth', 'HelloController@getAuth');
 Route::post('hello/auth', 'HelloController@postAuth');
 
 
-
-
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
